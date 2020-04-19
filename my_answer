@@ -1,0 +1,58 @@
+# 1st task
+
+Dockerfile:----
+
+from python
+maintainer riyasoni5990@gmail.com
+Run mkdir /myfolder
+copy time.py /myfolder/time.py
+cmd python /myfolder/time.py
+
+python file:--
+
+import datetime
+now=datetime.datetime.now()
+print(now.strftime("%H:%M:%S"))
+
+terminal command:----
+
+docker build -t alpine:riya .
+docker run -it --name riyac1q1 alpine:riya
+docker run alpine:riya  >> question1.txt
+docker run alpine:riya
+
+# 2nd task
+
+docker build -t adhoc:riya https://github.com/redashu/summer2020dockertest.git
+docker tag adhoc:riya riya2525/adhoc:riya
+docker push riya2525/adhoc:riya
+
+#3rd task
+
+docker run -d --name riyac3q3 -p 4444:80 dockerashu/ckad:v2 
+
+# 4 task
+
+Dockerfile :---
+
+from centos
+maintainer riyasoni5990@gmail.com
+Run yum install httpd -y
+expose 80
+Entrypoint httpd-DFOREGROUND
+
+terminal-----
+git clone https://github.com/redashu/beginner-html-site-styled.git
+docker build -t riya:q4 .
+docker run -d --name riyac4q4 -p 9351:80 riya:q4
+
+to access this page -------in browser
+http://52.204.127.145:9351
+
+# 5 task
+ docker volume create riyasoniq5
+ docker run -it --name riyac5q5 -v riyasoniq5:/adhocvol -v /etc/passwd:/user.txt alpine sh
+ wc -l user.txt > /adhocvol/usercount.txt
+ 
+
+
