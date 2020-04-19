@@ -37,6 +37,7 @@ Dockerfile :---
 
 from centos
 maintainer riyasoni5990@gmail.com
+copy beginner-html-site-styled /var/www/html/
 Run yum install httpd -y
 expose 80
 Entrypoint httpd-DFOREGROUND
